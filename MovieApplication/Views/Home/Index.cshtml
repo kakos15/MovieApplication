@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<h1>Movie Search</h1>
+
+<form asp-controller="Home" asp-action="Index" method="get">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Enter movie title" required>
+    </div>
+    <div class="form-group">
+        <label for="year">Year</label>
+        <input type="text" class="form-control" id="year" name="year" placeholder="Enter movie year (optional)">
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>

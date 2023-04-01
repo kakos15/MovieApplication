@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Movie Details";
+}
+
+@*<h1>Movie Details</h1>
+
+<div>
+    <!-- Add Razor code to display movie details -->
+</div>*@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movie Details - @Model.Title</title>
+</head>
+<body>
+    <h1>@Model.Title</h1>
+    <img src="@Model.Poster" alt="@Model.Title poster">
+    <p>Year: @Model.Year</p>
+    <p>Rated: @Model.Rated</p>
+    <p>Release Date: @Model.Released</p>
+    <p>Runtime: @Model.Runtime</p>
+    <p>Language: @Model.Language</p>
+    <p>Country: @Model.Country</p>
+    <p>Plot: @Model.Plot</p>
+
+    <h2>Ratings:</h2>
+    <ul>
+        @foreach (var rating in Model.Ratings)
+        {
+            <li>@rating.Source: @rating.Value</li>
+        }
+    </ul>
+
+    <p>
+        <a href="https://www.imdb.com/title/@Model.imdbID" target="_blank">View on IMDb</a>
+    </p>
+</body>
+</html>
